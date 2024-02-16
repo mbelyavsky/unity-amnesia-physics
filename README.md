@@ -1,4 +1,7 @@
-![](https://github.com/duristika/unity-amnesia-physics/blob/main/doorgif.gif)
+<p align="center">
+  <img src="doorgif.gif" alt="animated" />
+</p>
+
 Drawing inspiration from physics interaction systems
 found in games like Amnesia: The Dark Descent,
 The Bunker, and SOMA, this Unity C# script 
