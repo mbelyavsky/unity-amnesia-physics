@@ -11,10 +11,9 @@ interact with doors, levers, and any
 other object equipped with a Rigidbody component.
 
 How to use it: 
-1. Create a prefab with a small standart sphere object inside (or anything small). sphere object is used for debug purposes only.
-2. Attach sphere prefab and 2 images as UI Image elements to the script in editor.
-3. Attach main camera.
-4. Enjoy!
+1. Attach 2 images as UI Image elements to the script in editor.
+2. Attach camera.
+3. Enjoy!
 
 The script only works with rigidbody objects.
 
