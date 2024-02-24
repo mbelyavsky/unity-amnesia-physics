@@ -29,7 +29,7 @@ public class PhysicsInteraction : MonoBehaviour
         _emptyRb.isKinematic = true;
     }
 
-    void Update()
+    private void Update()
     {
         ShootRaycast();
 
@@ -50,7 +50,7 @@ public class PhysicsInteraction : MonoBehaviour
         }
     }
 
-    void ShootRaycast()
+    private void ShootRaycast()
     {
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
@@ -74,13 +74,13 @@ public class PhysicsInteraction : MonoBehaviour
         else HideImage(image1);
     }
 
-    void MoveEmpty(Vector3 position)
+    private void MoveEmpty(Vector3 position)
     {
         _empty.transform.position = position;
         _empty.transform.parent = mainCamera.transform;
     }
 
-    void ApplySpringConstraint()
+    private void ApplySpringConstraint()
     {
         if (_hitRigidbody && _empty )
         {
@@ -110,6 +110,7 @@ public class PhysicsInteraction : MonoBehaviour
                     rotatedLocalHitPoint.x/scaleOfHitObject.x,
                     rotatedLocalHitPoint.y/scaleOfHitObject.y,
                     rotatedLocalHitPoint.z/scaleOfHitObject.z);
+                //Debug.Log(rotatedLocalHitPoint);
                 spring.anchor = rotatedLocalHitPoint;
                 
                 DisplayImage(image2);
@@ -117,7 +118,7 @@ public class PhysicsInteraction : MonoBehaviour
         }
     }
 
-    void MoveEmptyWithMouse()
+    private void MoveEmptyWithMouse()
     {
         float mouseY = Input.GetAxis("Mouse Y");
         if (_empty)
@@ -135,7 +136,7 @@ public class PhysicsInteraction : MonoBehaviour
         }
     }
 
-    void ResetShooting()
+    private void ResetShooting()
     {
         if (_hitRigidbody)
         {
@@ -147,19 +148,19 @@ public class PhysicsInteraction : MonoBehaviour
         image2.gameObject.SetActive(false);
     }
 
-    void ThrowObject(Rigidbody objectToThrow)
+    private void ThrowObject(Rigidbody objectToThrow)
     {
         Vector3 throwDirection = mainCamera.transform.forward;
         objectToThrow.AddForce(throwDirection * throwForce,ForceMode.Impulse);
         ResetShooting();
     }
 
-    void DisplayImage(Image img)
+    private void DisplayImage(Image img)
     {
         img.gameObject.SetActive(true);
     }
 
-    void HideImage(Image img)
+    private void HideImage(Image img)
     {
         img.gameObject.SetActive(false);
     }
@@ -169,7 +170,7 @@ public class PhysicsInteraction : MonoBehaviour
         Gizmos.color = Color.red;
         if (_empty != null)
         {
-            Gizmos.DrawWireSphere(_empty.transform.position, 0.2f);
+            Gizmos.DrawWireSphere(_empty.transform.position,0.2f);
         }
     }
 }
