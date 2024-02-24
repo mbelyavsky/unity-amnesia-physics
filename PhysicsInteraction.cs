@@ -145,7 +145,8 @@ public class PhysicsInteraction : MonoBehaviour
 
         _isShooting = false;
         _hitRigidbody = null;
-        image2.gameObject.SetActive(false);
+        HideImage(image2);
+        HideImage(image1);
     }
 
     private void ThrowObject(Rigidbody objectToThrow)
